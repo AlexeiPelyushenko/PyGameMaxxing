@@ -34,7 +34,8 @@ class App:
             self.held_down = False
             
         if self.held_down:
-            ratio = self.slider.get_ratio(event.pos)
+            self.slider.set_ratio(event.pos)
+            ratio = self.slider.get_ratio()
             if ratio:
                 self.slider.text = f"{ratio:.2f}"
     

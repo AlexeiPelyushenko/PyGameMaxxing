@@ -53,14 +53,15 @@ class Slider(Button):
         self.vertical = vertical
         self.ratio = 0
     
-    def get_ratio(self, coords):
+    def set_ratio(self, coords):
         if coords in self:
             if self.vertical:
                 self.ratio = 1 - (self.get_rel_position(coords)[1] / self.height)
             else:
                 self.ratio = self.get_rel_position(coords)[0] / self.width
-            return self.ratio
-        return None
+    
+    def get_ratio(self, coords):
+        return self.ratio
         
         
 if __name__ == "__main__":
